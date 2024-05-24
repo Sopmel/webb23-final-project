@@ -37,4 +37,7 @@ jobs:
 
     - name: Run tests
       run: python blog_project/manage.py test
-      
+
+    - name: Postgres logs for debugging
+      if: failure()
+      run: docker logs $(docker ps -q --filter ancestor=postgres:13)
