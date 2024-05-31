@@ -41,3 +41,5 @@ jobs:
     - name: Postgres logs for debugging
       if: failure()
       run: docker logs $(docker ps -q --filter ancestor=postgres:13)
+
+# hej
